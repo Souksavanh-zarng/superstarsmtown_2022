@@ -1,0 +1,114 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign in</title>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>{{ message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <script>
+    $(".alert-dismissible").fadeTo(2000, 500).fadeOut(500, function () {
+      $(".alert-dismissible").alert('close');
+    });
+  </script>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+
+<!-- <div class="background-wrap">
+    <div class="background"></div>
+  </div>
+  
+<div class="container-fluid">
+  <div class="row mt-5 mr-2 ml-2" style="border: 5px solid #000;background-color: #8D008F;border-radius: 8px;">
+    <img src="{{ url_for('static',filename='images/brand_logo.jpg') }}" alt="" width="40%">
+    <div class="container-fluid col-sm-5">
+      <form id="accesspanel" action="/login" method="post">
+        <h1 id="litheader">KT Dental</h1>
+        <div class="inset">
+          <p>
+            <input type="text" name="username" id="email" placeholder="ຊື່ຜູ້ໃຊ້" required autocomplete="off">
+          </p>
+          <p>
+            <input type="password" name="password" id="password" placeholder="ລະຫັດຜ່ານ" required autocomplete="off">
+          </p>
+        </div>
+        <p class="p-container">
+          <input type="submit" class="fadeIn fourth" id="log_in" value="Log In" onclick="textneon()">
+        </p>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<!-- video -->
+<video autoplay muted loop id="myVideo">
+  <source src="{{ url_for('static',filename='video/bgm_login.mp4') }}" type="video/mp4">
+</video>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-1"></div>
+
+  <div class="col-sm-10" id="bgDark">
+    <div class="col-sm-12 text-light text-center">
+      <h3 class="mt-3">Purchase EXO - 8 Anniv. Theme</h3>
+    </div>
+
+    <!-- <div class="col-sm-12 text-light text-center">
+      <h5 class="mt-3">Baby Don't Cry</h5>
+    </div> -->
+    <div class="col-sm-12" style=""></div>
+    <div class="col-sm-12 d-flex justify-content-center" style="height: 100px;">
+      <img src="{{ url_for('static',filename='images/Packagestore_exo.png') }}" alt="" width="150" height="300">
+    </div>
+
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 d-flex justify-content-end">
+          <!-- <a href="">
+            <button class="btn" style="background-color: #EA027D;color: #fff;width: 200px;font-size: 14pt;height: 50px;" id="lgin">
+              Purchase
+            </button>
+          </a> -->
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-1"></div>
+  </div>
+</div>
+
+
+
+
+<script>
+function textneon(){
+    x = document.getElementById("email").value
+    y = document.getElementById("password").value
+
+    if(x == "" || y == ""){
+        document.getElementById("litheader").className = "litheader";
+    }else if (x == "" && y == ""){
+        document.getElementById("litheader").className = "litheader";
+    }else{
+        document.getElementById("litheader").className = "poweron";
+    }
+}
+</script>

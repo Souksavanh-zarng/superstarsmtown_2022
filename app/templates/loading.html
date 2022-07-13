@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ກະ​ລຸ​ນາ​ລໍຖ້າ-ກຳລັງເຂົ້າສູ່ລະບົບ</title>
+    <link rel= "stylesheet" type= "text/css" 
+    href= "{{ url_for('static',filename='styles/loading.css') }}">
+    <style>
+      #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- video -->
+    <video autoplay muted loop id="myVideo">
+      <source src="{{ url_for('static',filename='video/bgm_login.mp4') }}" type="video/mp4">
+    </video>
+
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
+  </body>
+  <script>
+    function aa() {
+      window.location.assign("/home");
+    }
+    // const progressbar = document.querySelector(".progress");
+
+    // const changeProgress = (progress) => {
+    //     progressbar.style.width = `${progress}%`;
+    // };
+
+    /* change progress after 1 second (only for showcase) */
+    setTimeout(() => changeProgress(10), 1000);
+    setTimeout(() => changeProgress(30), 2000);
+    setTimeout(() => changeProgress(60), 3000);
+    // // setTimeout(() => changeProgress(60), 4000);
+    // // setTimeout(() => changeProgress(85), 5000);
+    // setTimeout(() => changeProgress(98), 4000);
+    // setTimeout(() => changeProgress(100), 5000);
+    setTimeout(aa, 3500);
+  </script>
+</html>
